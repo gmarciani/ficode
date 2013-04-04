@@ -20,18 +20,17 @@ package com.marciani.ficode;
 import java.util.List;
 import android.os.Bundle;
 import android.app.ListActivity;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.support.v4.app.NavUtils;
+import android.widget.Toast;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.annotation.TargetApi;
 import android.content.Intent;
 import android.os.Build;
+
 
 /**
  * This class ....
@@ -49,6 +48,7 @@ public class CityList extends ListActivity {
 	
 	EditText etCityBrowse;
 	String city = "";
+	String province = "";
 	String nationalCode;	
 	
 	@Override
@@ -115,15 +115,21 @@ public class CityList extends ListActivity {
 		ItalyCode item = (ItalyCode) l.getAdapter().getItem(position);
 		
 		city = item.getCity();
+		province = item.getProvince();
 		nationalCode = item.getNationalCode();
 		
 		etCityBrowse.setText(city);	
 		etCityBrowse.setSelection(etCityBrowse.getText().length());
 		
+		Toast toastCity = Toast.makeText(getApplicationContext(), city + " (" + province + ")", Toast.LENGTH_SHORT);
+		toastCity.show();
+		
 		Intent intFiCode = new Intent(getApplicationContext(), FiCode.class);
 		intFiCode.putExtra(FiCode.Data.STR_CITY, city);
 		intFiCode.putExtra(FiCode.Data.STR_NATIONAL_CODE, nationalCode);
 		startActivity(intFiCode);
+		
+		finish();
 	}
 	
 	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
@@ -132,24 +138,5 @@ public class CityList extends ListActivity {
 			getActionBar().setDisplayHomeAsUpEnabled(false);
 			getActionBar().setTitle(R.string.CityList);
 		}
-	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.menu_activity_city_list, menu);
-		return true;
-	}
-	
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-		case android.R.id.home:
-			NavUtils.navigateUpFromSameTask(this);
-			return true;
-		case R.id.miQuit:
-			android.os.Process.killProcess(android.os.Process.myPid());
-			break;
-		}
-		return super.onOptionsItemSelected(item);
 	}
 }

@@ -19,9 +19,6 @@ package com.marciani.ficode;
 
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.NavUtils;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -30,6 +27,7 @@ import android.widget.Toast;
 import android.annotation.TargetApi;
 import android.app.ListActivity;
 import android.content.res.TypedArray;
+
 
 /**
  * This class ....
@@ -100,7 +98,9 @@ public class LanguageSettings extends ListActivity {
 					break;
 				default:
 					break;					
-				}			
+				}
+				
+				finish();
 			}
 		});
 		
@@ -112,23 +112,6 @@ public class LanguageSettings extends ListActivity {
 			getActionBar().setDisplayHomeAsUpEnabled(false);
 			getActionBar().setTitle(R.string.LanguageSettings);
 		}
-	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.menu_activity_language_settings, menu);
-		return true;
-	}
-	
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-		case android.R.id.home:
-			NavUtils.navigateUpFromSameTask(this);
-			return true;
-		}
-		
-		return super.onOptionsItemSelected(item);
 	}
 
 	

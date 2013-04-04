@@ -21,6 +21,7 @@ import static com.marciani.ficode.VowelConsonantParser.*;
 import java.util.List;
 import java.util.Map;
 
+
 /**
  * This class ....
  * 
@@ -251,6 +252,7 @@ public class FiscalCode {
 		StringBuilder fiscalCode = new StringBuilder();
 		String codeOmocodia = new String();
 		int i;
+		int changed;
 		int length;
 		char curChr;
 		
@@ -259,14 +261,15 @@ public class FiscalCode {
 		
 		length = fiscalCode.length();
 		
-		for(i = 1 ; i < omocodia; i ++) {
+		for(i = 1, changed = 0; i <= length & changed < omocodia; i ++) {
 			curChr = fiscalCode.charAt(length - i);
 			
 			if(!Character.isDigit(curChr)) {
 				continue;
 			} else {
-				codeOmocodia = CodeMaps.omocodiaMap.get(String.valueOf(omocodia));
+				codeOmocodia = CodeMaps.omocodiaMap.get(omocodia);
 				fiscalCode.setCharAt(length - i, codeOmocodia.charAt(0));
+				changed ++;
 			}
 		}
 		

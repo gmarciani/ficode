@@ -41,6 +41,7 @@ import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 /**
  * This class ....
  * 
@@ -80,7 +81,7 @@ public class FiCode extends Activity {
 	DatePicker dpBirthday;	
 	ImageButton ibtnBrowse;
 	SeekBar sbOmocodia;
-	TextView tvFiCode;
+	TextView tvFiscalCode;
 	
 	AlertDialog dialogOmocodia;
 	
@@ -113,7 +114,7 @@ public class FiCode extends Activity {
 		rgGender = (RadioGroup) findViewById(R.id.rgGender);
 		dpBirthday = (DatePicker) findViewById(R.id.dpBirthday);
 		ibtnBrowse = (ImageButton) findViewById(R.id.ibtnBrowse);
-		tvFiCode = (TextView) findViewById(R.id.tvFiCode);	
+		tvFiscalCode = (TextView) findViewById(R.id.tvFiCode);	
 		
 		etLastname.addTextChangedListener(new TextWatcher() {
 
@@ -121,7 +122,7 @@ public class FiCode extends Activity {
 			public void afterTextChanged(Editable s) {	
 				lastname = s.toString();
 				codeLastname = FiscalCode.codeLastname(lastname);
-				tvFiCode.setText(FiscalCode.updateFiscalCode(codeLastname, codeFirstname, codeYear, codeMonth, codeDay, codeCity, omocodia));			
+				tvFiscalCode.setText(FiscalCode.updateFiscalCode(codeLastname, codeFirstname, codeYear, codeMonth, codeDay, codeCity, omocodia));			
 			}
 
 			@Override
@@ -141,7 +142,7 @@ public class FiCode extends Activity {
 			public void afterTextChanged(Editable s) {
 				firstname = s.toString();
 				codeFirstname = FiscalCode.codeFirstname(firstname);
-				tvFiCode.setText(FiscalCode.updateFiscalCode(codeLastname, codeFirstname, codeYear, codeMonth, codeDay, codeCity, omocodia));
+				tvFiscalCode.setText(FiscalCode.updateFiscalCode(codeLastname, codeFirstname, codeYear, codeMonth, codeDay, codeCity, omocodia));
 			}
 
 			@Override
@@ -175,7 +176,7 @@ public class FiCode extends Activity {
 					codeDay = "**";
 				}
 				
-				tvFiCode.setText(FiscalCode.updateFiscalCode(codeLastname, codeFirstname, codeYear, codeMonth, codeDay, codeCity, omocodia));
+				tvFiscalCode.setText(FiscalCode.updateFiscalCode(codeLastname, codeFirstname, codeYear, codeMonth, codeDay, codeCity, omocodia));
 			}
 		});
 				
@@ -244,6 +245,8 @@ public class FiCode extends Activity {
 	               omocodia = sbOmocodia.getProgress();
 	               toastOmocodia = Toast.makeText(getApplicationContext(), "Omocodia: " + omocodia, Toast.LENGTH_SHORT);
 		           toastOmocodia.show();
+		           
+		           tvFiscalCode.setText(FiscalCode.updateFiscalCode(codeLastname, codeFirstname, codeYear, codeMonth, codeDay, codeCity, omocodia));
 	           }
 	       });
 		
@@ -305,7 +308,7 @@ public class FiCode extends Activity {
 				codeMonth = FiscalCode.codeMonth(month+1);
 				codeYear = FiscalCode.codeYear(year);
 				
-				tvFiCode.setText(FiscalCode.updateFiscalCode(codeLastname, codeFirstname, codeYear, codeMonth, codeDay, codeCity, omocodia));
+				tvFiscalCode.setText(FiscalCode.updateFiscalCode(codeLastname, codeFirstname, codeYear, codeMonth, codeDay, codeCity, omocodia));
 			}
 		});
 		
@@ -314,7 +317,7 @@ public class FiCode extends Activity {
 		
 		sbOmocodia.setProgress(omocodia);
 		
-		tvFiCode.setText(FiscalCode.updateFiscalCode(codeLastname, codeFirstname, codeYear, codeMonth, codeDay, codeCity, omocodia));		
+		tvFiscalCode.setText(FiscalCode.updateFiscalCode(codeLastname, codeFirstname, codeYear, codeMonth, codeDay, codeCity, omocodia));		
 	}
 	
 	@Override
