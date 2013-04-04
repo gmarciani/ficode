@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <issue id="DefaultLocale" severity="ignore" />
+    <issue id="Recycle" severity="ignore" />
+    <issue id="SdCardPath">
+        <ignore path="src/com/marciani/ficode/FiCodeHelper.java" />
+    </issue>
+    <issue id="UseSparseArrays">
+        <ignore path="src/com/marciani/ficode/CodeMaps.java" />
+    </issue>
+</lint>

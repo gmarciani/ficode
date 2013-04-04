@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+@Project: FiCode
+
+@Location: res/values
+
+@Name: strings.xml
+
+@Description: XML resource providing text strings for the application, with optional text styling and formatting, that can be referenced from the application or from other resource files. 
+This resource provides the IT language support.
+
+@Author: Giacomo Marciani (giacomo.marciani@gmail.com)
+
+@Creation: 20.03.2013
+
+@Last Update: 22.03.2013
+-->
+
+<resources>
+    <!-- General -->
+    <string name="app_name">fiCode</string>
+    <string name="action_settings">Settings</string>
+    
+    <!-- Activity: FiCode -->
+    <string name="FiscalCode">Codice Fiscale</string>
+    <string name="Firstname">Nome</string>
+    <string name="Lastname">Cognome</string>
+    <string name="Male">M</string>
+    <string name="Female">F</string>
+    <string name="City">Comune</string>
+    <string name="Browse">Sfoglia</string>    
+</resources>

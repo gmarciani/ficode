@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+@Project: FiCode
+
+@Location: res/layout
+
+@Name: list_row_language_settings.xml
+
+@Description: XML resource defining the UI architecture in an activity, or in a component of a UI.
+This resource defines the UI architecture for LanguageSettings (Activity), providing the general structure 
+for a row into its ListView.
+
+@Author: Giacomo Marciani (giacomo.marciani@gmail.com)
+
+@Creation: 20.03.2013
+
+@Last Update: 03.04.2013
+-->
+
+<!-- Root Layout -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+    
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="48dp"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/Icon" >
+
+    </ImageView>
+
+    <TextView
+        android:id="@+id/label"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:textSize="20sp" >
+    </TextView>  
+
+</LinearLayout>

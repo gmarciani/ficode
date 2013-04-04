@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+@Project: FiCode
+
+@Location: res/values
+
+@Name: strings.xml
+
+@Description: XML resource providing text strings for the application, with optional text styling and formatting, that can be referenced from the application or from other resource files. 
+This resource provides the DEFAULT (EN) language support.
+
+@Author: Giacomo Marciani (giacomo.marciani@gmail.com)
+
+@Creation: 20.03.2013
+
+@Last Update: 22.03.2013
+-->
+
+<resources>
+
+    <!-- General -->
+    <string name="app_name">fiCode</string>
+    <string name="LanguageSettings">Language Settings</string>
+    <string name="OmocodiaSettings">Omocodia Settings</string>
+    <string name="Quit">Quit</string>
+    <string name="Icon">Icon</string>
+
+    <!-- AlertDialog: Omocodia -->
+    <string name="AlertDialogOmocodia">Select your omocodia level</string>
+    <string name="OK">OK</string>
+    <string name="Cancel">Cancel</string>
+
+    <!-- Activity: FiCode -->
+    <string name="FiscalCode">Fiscal Code</string>
+    <string name="Firstname">Firstname</string>
+    <string name="Lastname">Lastname</string>
+    <string name="Male">M</string>
+    <string name="Female">F</string>
+    <string name="City">City</string>
+    <string name="Browse">Browse</string>
+    <string name="Omocodia">Omocodia</string>
+
+    <!-- Activity: CityList -->
+    <!-- <string name="City">City</string> -->
+    <string name="CityList">City List</string>
+    <string name="NoContent">No Content Available</string>
+
+    <!-- Activity: LanguageSettings -->
+    <string name="LanguageEnglish">Language: English</string>
+    <string name="LanguageGerman">Language: German</string>
+    <string name="LanguageFrench">Language: French</string>
+    <string name="LanguageSpanish">Language: Spanish</string>
+    <string name="LanguageItalian">Language: Italian</string>
+    
+    <string-array name="Languages">
+        <item>English (default)</item>
+        <item>German</item>
+        <item>French</item>
+        <item>Spanish</item>
+        <item>Italian</item>
+    </string-array>
+
+    <array name="Flags">
+        <item>@drawable/ic_launcher_en</item>
+        <item>@drawable/ic_launcher_de</item>
+        <item>@drawable/ic_launcher_fr</item>
+        <item>@drawable/ic_launcher_es</item>
+        <item>@drawable/ic_launcher_it</item>
+    </array>
+
+    <string name="title_activity_prova">Prova</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+
+</resources>

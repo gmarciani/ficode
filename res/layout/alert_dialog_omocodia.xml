@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+@Project: FiCode
+
+@Location: res/layout
+
+@Name: alert_dialog_omocodia.xml
+
+@Description: XML resource defining the UI architecture in an activity, or in a component of a UI.
+This resource defines the UI architecture for FiCode (Activity), providing the structure of the Alert Dialog
+dialogOmocodia.
+
+@Author: Giacomo Marciani (giacomo.marciani@gmail.com)
+
+@Creation: 20.03.2013
+
+@Last Update: 03.04.2013
+-->
+
+<!-- Root Layout -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/omocodia_alert_dialog_layout_root"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+    
+    <TextView
+        android:id="@+id/tvAlertDialogOmocodia"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="@string/AlertDialogOmocodia" />        
+
+    <SeekBar
+        android:id="@+id/sbOmocodia"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvAlertDialogOmocodia"
+        android:max="9"
+        android:progress="0" />
+    
+</RelativeLayout>
