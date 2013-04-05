@@ -22,6 +22,8 @@ package com.marciani.ficode;
 
 import java.util.Map;
 import com.marciani.ficode.R;
+import com.marciani.ficode.fiscalcode.FiscalCode;
+
 import android.os.Build;
 import android.os.Bundle;
 import android.annotation.TargetApi;
@@ -73,11 +75,11 @@ public class FiCode extends Activity {
 	}
 	
 	public static class FiscalCodeMap {
-		protected static final Map<Integer, String> monthMap = com.marciani.ficode.CodeMaps.monthMap;
-		protected static final Map<String, Integer> evenMap = com.marciani.ficode.CodeMaps.evenMap;
-		protected static final Map<String, Integer> oddMap = com.marciani.ficode.CodeMaps.oddMap;
-		protected static final Map<Integer, String> restMap = com.marciani.ficode.CodeMaps.restMap;
-		protected static final Map<Integer, String> omocodiaMap = com.marciani.ficode.CodeMaps.omocodiaMap;
+		protected static final Map<Integer, String> monthMap = com.marciani.ficode.fiscalcode.CodeMaps.monthMap;
+		protected static final Map<String, Integer> evenMap = com.marciani.ficode.fiscalcode.CodeMaps.evenMap;
+		protected static final Map<String, Integer> oddMap = com.marciani.ficode.fiscalcode.CodeMaps.oddMap;
+		protected static final Map<Integer, String> restMap = com.marciani.ficode.fiscalcode.CodeMaps.restMap;
+		protected static final Map<Integer, String> omocodiaMap = com.marciani.ficode.fiscalcode.CodeMaps.omocodiaMap;
 	}
 	
 	EditText etLastname;

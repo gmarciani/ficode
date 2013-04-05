@@ -39,7 +39,7 @@ This resource provides the FR language support.
     <string name="Omocodia">Omocodia</string> 
     
      <!-- AlertDialog: Omocodia -->
-    <string name="AlertDialogOmocodia">Choisissez votre niveau d'omocodia</string>
+    <string name="AlertDialogOmocodia">Choisissez votre niveau d\'omocodia</string>
     <string name="OK">OK</string>
     <string name="Cancel">Annuler</string>
     

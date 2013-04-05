@@ -17,7 +17,7 @@
  */
 
 
-package com.marciani.ficode;
+package com.marciani.ficode.database;
 
 
 /**
@@ -97,6 +97,6 @@ public class AbroadCode {
 	
 	@Override
 	public String toString() {
-		return (city + " - " + nationalCode);
+		return (city);
 	}
 }

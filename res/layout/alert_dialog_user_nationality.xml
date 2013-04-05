@@ -29,14 +29,18 @@ dialogUserNationality.
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:text="@string/AlertDialogOmocodia" />
+        android1:paddingBottom="10dp"
+        android1:paddingTop="20dp"
+        android:text="@string/AlertDialogUserNationality" />
 
     <RadioGroup
         android1:id="@+id/rgUserNationality"
         android1:layout_width="wrap_content"
-        android1:layout_height="wrap_content"
-        android1:orientation="horizontal"
+        android1:layout_height="wrap_content"        
         android1:layout_centerHorizontal="true"
+        android1:orientation="horizontal"
+        android1:paddingBottom="30dp"
+        android1:paddingTop="10dp"
         android1:layout_below="@id/tvAlertDialogUserNationality" >
 
         <RadioButton

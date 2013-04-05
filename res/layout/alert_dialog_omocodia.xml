@@ -29,14 +29,18 @@ dialogOmocodia.
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:text="@string/AlertDialogOmocodia" />        
+        android:paddingBottom="10dp"
+        android:paddingTop="20dp"
+        android:text="@string/AlertDialogOmocodia" />
 
     <SeekBar
         android:id="@+id/sbOmocodia"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:paddingBottom="30dp"
+        android:paddingTop="10dp"
         android:layout_below="@id/tvAlertDialogOmocodia"
-        android:max="9"
+        android:max="9"        
         android:progress="0" />
     
 </RelativeLayout>

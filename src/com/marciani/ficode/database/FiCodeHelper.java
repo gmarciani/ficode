@@ -17,7 +17,7 @@
  */
 
 
-package com.marciani.ficode;
+package com.marciani.ficode.database;
 
 
 import java.io.File;

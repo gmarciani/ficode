@@ -21,6 +21,13 @@ package com.marciani.ficode;
 
 
 import java.util.List;
+
+import com.marciani.ficode.database.AbroadCode;
+import com.marciani.ficode.database.AbroadCodeDataSource;
+import com.marciani.ficode.database.FiCodeHelper;
+import com.marciani.ficode.database.ItalyCode;
+import com.marciani.ficode.database.ItalyCodeDataSource;
+
 import android.os.Bundle;
 import android.app.ListActivity;
 import android.view.View;

@@ -17,7 +17,7 @@
  */
 
 
-package com.marciani.ficode;
+package com.marciani.ficode.database;
 
 
 /**
@@ -139,6 +139,6 @@ public class ItalyCode {
 	
 	@Override
 	public String toString() {
-		return (city + " (" + province + ")" + " - " + nationalCode);
+		return (city + " (" + province + ")");
 	}
 }

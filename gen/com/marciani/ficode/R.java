@@ -89,15 +89,10 @@ public final class R {
         public static final int Cancel=0x7f050010;
         public static final int City=0x7f05000a;
         /**  Activity: CityList 
- <string name="City">City</string> 
  Activity: CityList 
- <string name="City">City</string> 
  Activity: CityList 
- <string name="City">City</string> 
  Activity: CityList 
- <string name="City">City</string> 
  Activity: CityList 
- <string name="City">City</string> 
          */
         public static final int CityList=0x7f050014;
         public static final int Female=0x7f050009;

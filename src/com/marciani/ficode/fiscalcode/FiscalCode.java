@@ -17,12 +17,14 @@
  */
 
 
-package com.marciani.ficode;
+package com.marciani.ficode.fiscalcode;
 
 
-import static com.marciani.ficode.VowelConsonantParser.*;
+import static com.marciani.ficode.fiscalcode.VowelConsonantParser.*;
+
 import java.util.List;
 import java.util.Map;
+
 
 
 /**
@@ -36,11 +38,11 @@ import java.util.Map;
 public class FiscalCode {
 	
 	public static class FiscalCodeMap {
-		protected static final Map<Integer, String> monthMap = com.marciani.ficode.CodeMaps.monthMap;
-		protected static final Map<String, Integer> evenMap = com.marciani.ficode.CodeMaps.evenMap;
-		protected static final Map<String, Integer> oddMap = com.marciani.ficode.CodeMaps.oddMap;
-		protected static final Map<Integer, String> restMap = com.marciani.ficode.CodeMaps.restMap;
-		protected static final Map<Integer, String> omocodiaMap = com.marciani.ficode.CodeMaps.omocodiaMap;		
+		protected static final Map<Integer, String> monthMap = com.marciani.ficode.fiscalcode.CodeMaps.monthMap;
+		protected static final Map<String, Integer> evenMap = com.marciani.ficode.fiscalcode.CodeMaps.evenMap;
+		protected static final Map<String, Integer> oddMap = com.marciani.ficode.fiscalcode.CodeMaps.oddMap;
+		protected static final Map<Integer, String> restMap = com.marciani.ficode.fiscalcode.CodeMaps.restMap;
+		protected static final Map<Integer, String> omocodiaMap = com.marciani.ficode.fiscalcode.CodeMaps.omocodiaMap;		
 	}
 	
 	

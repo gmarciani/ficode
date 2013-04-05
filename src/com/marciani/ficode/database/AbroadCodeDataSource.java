@@ -17,12 +17,14 @@
  */
 
 
-package com.marciani.ficode;
+package com.marciani.ficode.database;
 
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+
 import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
