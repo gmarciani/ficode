@@ -70,41 +70,56 @@ public final class R {
         public static final int menu_activity_fi_code=0x7f070000;
     }
     public static final class string {
-        public static final int Abroad=0x7f05000a;
+        public static final int Abroad=0x7f050013;
         /**  AlertDialog: Omocodia 
+ AlertDialog: Omocodia 
+ AlertDialog: Omocodia 
+ AlertDialog: Omocodia 
+ AlertDialog: Omocodia 
          */
-        public static final int AlertDialogOmocodia=0x7f050005;
+        public static final int AlertDialogOmocodia=0x7f05000e;
         /**  AlertDialog: User Nationality 
+ AlertDialog: User Nationality 
+ AlertDialog: User Nationality 
+ AlertDialog: User Nationality 
+ AlertDialog: User Nationality 
          */
-        public static final int AlertDialogUserNationality=0x7f050008;
-        public static final int Browse=0x7f050012;
-        public static final int Cancel=0x7f050007;
-        public static final int City=0x7f050010;
+        public static final int AlertDialogUserNationality=0x7f050011;
+        public static final int Browse=0x7f05000c;
+        public static final int Cancel=0x7f050010;
+        public static final int City=0x7f05000a;
         /**  Activity: CityList 
+ <string name="City">City</string> 
+ Activity: CityList 
+ <string name="City">City</string> 
+ Activity: CityList 
+ <string name="City">City</string> 
+ Activity: CityList 
+ <string name="City">City</string> 
+ Activity: CityList 
  <string name="City">City</string> 
          */
         public static final int CityList=0x7f050014;
-        public static final int Female=0x7f05000f;
-        public static final int Firstname=0x7f05000c;
+        public static final int Female=0x7f050009;
+        public static final int Firstname=0x7f050006;
         /**  Activity: FiCode 
  Activity: FiCode 
  Activity: FiCode 
  Activity: FiCode 
  Activity: FiCode 
          */
-        public static final int FiscalCode=0x7f05000b;
+        public static final int FiscalCode=0x7f050005;
         public static final int Icon=0x7f050004;
-        public static final int Italy=0x7f050009;
-        public static final int Lastname=0x7f05000d;
-        public static final int Male=0x7f05000e;
-        public static final int Nationality=0x7f050011;
+        public static final int Italy=0x7f050012;
+        public static final int Lastname=0x7f050007;
+        public static final int Male=0x7f050008;
+        public static final int Nationality=0x7f05000b;
         public static final int NoContent=0x7f050015;
-        public static final int OK=0x7f050006;
-        public static final int Omocodia=0x7f050013;
+        public static final int OK=0x7f05000f;
+        public static final int Omocodia=0x7f05000d;
         public static final int OmocodiaSettings=0x7f050002;
         public static final int Quit=0x7f050003;
         public static final int UserNationality=0x7f050001;
-        public static final int action_settings=0x7f050016;
         /**  General 
  General 
  General 

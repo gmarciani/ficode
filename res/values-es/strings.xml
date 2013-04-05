@@ -7,7 +7,8 @@
 
 @Name: strings.xml
 
-@Description: XML resource providing text strings for the application, with optional text styling and formatting, that can be referenced from the application or from other resource files. 
+@Description: XML resource providing text strings for the application, with optional text styling and formatting, 
+that can be referenced from the application or from other resource files. 
 This resource provides the ES language support.
 
 @Author: Giacomo Marciani (giacomo.marciani@gmail.com)
@@ -18,9 +19,13 @@ This resource provides the ES language support.
 -->
 
 <resources>
+    
     <!-- General -->
     <string name="app_name">fiCode</string>
-    <string name="action_settings">Settings</string>
+    <string name="UserNationality">Usuario Nacionalidad</string>
+    <string name="OmocodiaSettings">Omocodia Configuración</string>
+    <string name="Quit">Abandonar</string>
+    <string name="Icon">Icono</string>
     
     <!-- Activity: FiCode -->
     <string name="FiscalCode">Codigo Fiscal</string>
@@ -29,5 +34,22 @@ This resource provides the ES language support.
     <string name="Male">H</string>
     <string name="Female">M</string>
     <string name="City">Ciudad</string>
-    <string name="Browse">Navegar</string>    
+    <string name="Nationality">Nacionalidad</string>
+    <string name="Browse">Buscar</string>
+    <string name="Omocodia">Omocodia</string>
+    
+     <!-- AlertDialog: Omocodia -->
+    <string name="AlertDialogOmocodia">Seleccione su nivel de omocodia</string>
+    <string name="OK">OK</string>
+    <string name="Cancel">Cancelar</string>
+    
+     <!-- AlertDialog: User Nationality -->
+    <string name="AlertDialogUserNationality">Seleccione su nacionalidad</string>
+    <string name="Italy">Italia</string>
+    <string name="Abroad">Extranjero</string>
+
+    <!-- Activity: CityList -->
+    <string name="CityList">Lista de Ciudades</string>
+    <string name="NoContent">No Contiene Información</string>
+    
 </resources>

@@ -1,4 +1,5 @@
-/*  FiCode: Android app for IT Fiscal Code calculation, with the support for the omocodia and the generation of abroad codes.
+/*  FiCode: Android app for IT Fiscal Code calculation, with the support for 
+    the omocodia and the generation of abroad codes.
     Copyright (C) 2013  Giacomo Marciani <giacomo.marciani@gmail.com>.
 
     This program is free software: you can redistribute it and/or modify
@@ -14,6 +15,7 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 
 package com.marciani.ficode;
 
