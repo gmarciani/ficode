@@ -44,7 +44,7 @@ public class VowelConsonantParser {
 		char curChr;
 		int i;
 		
-		for(i=0;i<str.length();i++) {
+		for(i = 0; i < str.length(); i ++) {
 			curChr = str.charAt(i);
 			if(isVowel(curChr)) {
 				vowelList.add(curChr);
@@ -66,7 +66,7 @@ public class VowelConsonantParser {
 		char curChr;
 		int i;
 		
-		for(i=0;i<str.length();i++) {
+		for(i = 0; i < str.length(); i ++) {
 			curChr = str.charAt(i);
 			if(isConsonant(curChr)) {
 				consonantList.add(curChr);
@@ -84,14 +84,17 @@ public class VowelConsonantParser {
 	 */
 	
 	public static boolean isVowel(char chr) {
-		boolean isVowel = true;
+		boolean isVowel;
 		
-		if(chr=='A'|chr=='a'|chr=='E'|chr=='e'|chr=='I'|chr=='i'|chr=='O'|chr=='o'|chr=='U'|chr=='u') {
-			return isVowel;
+		chr = Character.toUpperCase(chr);
+		
+		if(chr == 'A' | chr == 'E' | chr == 'I' | chr == 'O' | chr == 'U') {
+			isVowel = true;
 		} else {
 			isVowel = false;
-			return isVowel;
 		}
+		
+		return isVowel;
 	}
 	
 	
@@ -102,12 +105,20 @@ public class VowelConsonantParser {
 	 */
 	
 	public static boolean isConsonant(char chr) {
-		boolean isConsonant = true;
-		if(isVowel(chr)) {
-			isConsonant = false;
-			return isConsonant;
+		boolean isConsonant;
+		
+		chr = Character.toUpperCase(chr);
+		
+		if(chr == 'B' | chr == 'C' | chr == 'D' | chr == 'F' | chr == 'G' | 
+				chr == 'H' | chr == 'J' | chr == 'K' | chr == 'L' | chr == 'M' | 
+				chr == 'N' | chr == 'P' | chr == 'Q' | chr == 'R' | chr == 'S' | 
+				chr == 'T' | chr == 'V' | chr == 'W' | chr == 'X' | chr == 'Y' | 
+				chr == 'Z') {
+			isConsonant = true;
 		} else {
-			return isConsonant;
+			isConsonant = false;
 		}
+		
+		return isConsonant;		
 	}
 }

@@ -40,7 +40,7 @@ public class ItalyCodeDataSource {
 	private SQLiteDatabase database;
 	private FiCodeHelper dbHelper;
 	private String[] allColumns = {FiCodeHelper.ItalyCodesColumn._id, FiCodeHelper.ItalyCodesColumn.nationalCode, FiCodeHelper.ItalyCodesColumn.catastalCode, FiCodeHelper.ItalyCodesColumn.province, FiCodeHelper.ItalyCodesColumn.city};
-
+	private static final String cityAlphaSortAsc = FiCodeHelper.ItalyCodesColumn.city + " ASC";
 	
 	/**
 	 * 
@@ -91,7 +91,7 @@ public class ItalyCodeDataSource {
 	
 	public List<ItalyCode> getItalyCodes(String selectionFilter) {
 		List<ItalyCode> listItalyCodes = new ArrayList<ItalyCode>();
-		Cursor cursor = database.query(FiCodeHelper.Table.ItalyCodes, allColumns, selectionFilter, null, null, null, null);
+		Cursor cursor = database.query(FiCodeHelper.Table.ItalyCodes, allColumns, selectionFilter, null, null, null, cityAlphaSortAsc);
 		
 		cursor.moveToFirst();
 		

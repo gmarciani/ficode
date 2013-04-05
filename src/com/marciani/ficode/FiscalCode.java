@@ -60,7 +60,10 @@ public class FiscalCode {
 			
 			for(i = 0, countConsonants = 0; i < lastname.length() & countConsonants < 3; i++) {
 				curChr = lastname.charAt(i);
-				if(isConsonant(curChr)) {
+				
+				if(curChr == ' ') {
+					continue;
+				} else if(isConsonant(curChr)) {
 					codeLastname += curChr;
 					countConsonants++;
 				}
@@ -69,7 +72,10 @@ public class FiscalCode {
 			if(countConsonants<3) {
 				for(i = 0, countVowels = 0; i < lastname.length() & countVowels < 3 - countConsonants; i++) {
 					curChr = lastname.charAt(i);
-					if(isVowel(curChr)) {
+					
+					if(curChr == ' ') {
+						continue;
+					} else if(isVowel(curChr)) {
 						codeLastname += curChr;
 						countVowels++;
 					}

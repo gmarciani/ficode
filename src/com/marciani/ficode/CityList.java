@@ -45,11 +45,13 @@ public class CityList extends ListActivity {
 
 	private ItalyCodeDataSource datasource;
 	private static final String selectionFilter = FiCodeHelper.ItalyCodesColumn.city + " like ";
+	private static final String noFilter = null;
 	
 	EditText etCityBrowse;
 	String city = "";
 	String province = "";
 	String nationalCode;	
+	String filter;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -66,21 +68,23 @@ public class CityList extends ListActivity {
 
 			@Override
 			public void afterTextChanged(Editable s) {
+				city = s.toString();
 				
+				filter = (city.length() == 0) ? noFilter : (selectionFilter + "'" + city + "%'");
+				
+				List<ItalyCode> listItalyCode = datasource.getItalyCodes(filter);
+				ArrayAdapter<ItalyCode> adapterItalyCode = new ArrayAdapter<ItalyCode>(getApplicationContext(), android.R.layout.simple_list_item_1, listItalyCode);
+				setListAdapter(adapterItalyCode);				
 			}
 
 			@Override
 			public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-				
+				// TODO Auto-generated method stub	
 			}
 
 			@Override
 			public void onTextChanged(CharSequence s, int start, int before, int count) {
-				city = etCityBrowse.getText().toString();
-				
-				List<ItalyCode> listItalyCode = datasource.getItalyCodes(selectionFilter + "'" + city + "%'");
-				ArrayAdapter<ItalyCode> adapterItalyCode = new ArrayAdapter<ItalyCode>(getApplicationContext(), android.R.layout.simple_list_item_1, listItalyCode);
-				setListAdapter(adapterItalyCode);
+				// TODO Auto-generated method stub	
 			}			
 		});	
 	}
