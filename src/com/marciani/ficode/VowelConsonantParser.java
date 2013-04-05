@@ -25,7 +25,7 @@ import java.util.List;
 
 
 /**
- * This class ....
+ * This class provides specific methods for vowels and consonants parsing into Strings.
  * 
  * @author Giacomo Marciani <giacomo.marciani@gmail.com>
  * 

@@ -21,7 +21,7 @@ package com.marciani.ficode;
 
 
 /**
- * This class ....
+ * This class provides the interface for the access to a generic database record of the specific database table AbroadCodes.
  * 
  * @author Giacomo Marciani <giacomo.marciani@gmail.com>
  * 

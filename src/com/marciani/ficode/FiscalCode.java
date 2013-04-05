@@ -26,7 +26,7 @@ import java.util.Map;
 
 
 /**
- * This class ....
+ * This class provides specific methods for IT Fiscal Code calculation, according to the regulatory D.M. 13813/1976. 
  * 
  * @author Giacomo Marciani <giacomo.marciani@gmail.com>
  * 

@@ -36,7 +36,7 @@ import android.os.Build;
 
 
 /**
- * This class ....
+ * This class displays the list of municipalities and nationalities.
  * 
  * @author Giacomo Marciani <giacomo.marciani@gmail.com>
  * 

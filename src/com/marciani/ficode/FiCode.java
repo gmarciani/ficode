@@ -48,7 +48,7 @@ import android.widget.Toast;
 
 
 /**
- * This class ....
+ * This class is the main module for insertion and validation of personal data, and for the code generation forwarding and their display.
  * 
  * @author Giacomo Marciani <giacomo.marciani@gmail.com>
  * 

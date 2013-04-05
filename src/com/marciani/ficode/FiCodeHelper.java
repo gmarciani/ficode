@@ -32,7 +32,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 
 /**
- * This class ....
+ * This class provides database creation and version management.
  * 
  * @author Giacomo Marciani <giacomo.marciani@gmail.com>
  * 

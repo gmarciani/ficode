@@ -30,7 +30,7 @@ import android.database.sqlite.SQLiteDatabase;
 
 
 /**
- * This class ....
+ * This class provides the interface for the access to the specific database table AbroadCodes.
  * 
  * @author Giacomo Marciani <giacomo.marciani@gmail.com>
  * 

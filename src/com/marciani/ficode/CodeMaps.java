@@ -25,7 +25,7 @@ import java.util.Map;
 
 
 /**
- * This class ....
+ * This class provides static mapping for codes generation.
  * 
  * @author Giacomo Marciani <giacomo.marciani@gmail.com>
  * 
