@@ -1,4 +1,4 @@
-/*  FiCode: Android App for Fiscal Code calculation.
+/*  FiCode: Android app for IT Fiscal Code calculation, with the support for the omocodia and the generation of abroad codes.
     Copyright (C) 2013  Giacomo Marciani <giacomo.marciani@gmail.com>.
 
     This program is free software: you can redistribute it and/or modify
@@ -29,9 +29,9 @@ package com.marciani.ficode;
 
 public class AbroadCode {
 	
-	private long id;
-	private String codiceNazionale;
-	private String comune;
+	private long _id;
+	private String nationalCode;
+	private String city;
 
 	
 	/**
@@ -40,7 +40,7 @@ public class AbroadCode {
 	 */
 	
 	public long getId() {
-		return id;
+		return _id;
 	}
 
 	
@@ -50,7 +50,7 @@ public class AbroadCode {
 	 */
 	
 	public void setId(long id) {
-		this.id = id;
+		this._id = id;
 	}
 
 	
@@ -59,18 +59,18 @@ public class AbroadCode {
 	 * @return
 	 */
 	
-	public String getCodiceNazionale() {
-		return codiceNazionale;
+	public String getNationalCode() {
+		return nationalCode;
 	}
 
 	
 	/**
 	 * 
-	 * @param codiceNazionale
+	 * @param nationalCode
 	 */
 	
-	public void setCodiceNazionale(String codiceNazionale) {
-		this.codiceNazionale = codiceNazionale;
+	public void setNationalCode(String nationalCode) {
+		this.nationalCode = nationalCode;
 	}
 
 	
@@ -79,27 +79,22 @@ public class AbroadCode {
 	 * @return
 	 */
 	
-	public String getComune() {
-		return comune;
+	public String getCity() {
+		return city;
 	}
 
 	
 	/**
 	 * 
-	 * @param comune
+	 * @param city
 	 */
 	
-	public void setComune(String comune) {
-		this.comune = comune;
+	public void setCity(String city) {
+		this.city = city;
 	}
-
-	
-	/**
-	 * 
-	 */
 	
 	@Override
 	public String toString() {
-		return comune;
+		return (city + " - " + nationalCode);
 	}
 }

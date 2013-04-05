@@ -8,38 +8,37 @@
         android:minSdkVersion="8"
         android:targetSdkVersion="17" />
 
-    <application
+    <application        
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
-        <activity
+        android:theme="@style/AppTheme" >  
+              
+        <activity            
             android:name="com.marciani.ficode.FiCode"
             android:configChanges="orientation"
-            android:label="@string/app_name" >
-            <intent-filter>
+            android:label="@string/app_name" >  
+                      
+            <intent-filter>                
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
+                
             </intent-filter>
-        </activity>
-        <activity
+            
+        </activity>        
+        
+        <activity            
             android:name="com.marciani.ficode.CityList"
             android:configChanges="orientation"
             android:label="@string/app_name"
             android:parentActivityName="com.marciani.ficode.FiCode" >
+            
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.marciani.ficode.FiCode" />
-        </activity>
-        <activity
-            android:name="com.marciani.ficode.LanguageSettings"
-            android:label="@string/app_name" >
-        </activity>
-        <activity
-            android:name="com.marciani.ficode.Prova"
-            android:label="@string/title_activity_prova" >
-        </activity>
+            
+        </activity>  
+        
     </application>
-
+    
 </manifest>

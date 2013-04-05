@@ -21,11 +21,11 @@ This resource defines the UI architecture for FiCode (Activity), providing the s
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <item
-        android:id="@+id/miLanguageSettings"
+        android:id="@+id/miUserNationality"
         android:orderInCategory="100"
         android:showAsAction="always"
-        android:title="@string/LanguageSettings"
-        android:icon="@drawable/ic_launcher_world"/>
+        android:title="@string/UserNationality"
+        android:icon="@drawable/ic_launcher_it"/>
     <item
         android:id="@+id/miOmocodiaSettings"
         android:orderInCategory="100"

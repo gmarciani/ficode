@@ -35,19 +35,18 @@ import android.database.sqlite.SQLiteDatabase;
  * 
  */
 
-public class ItalyCodeDataSource {
-	
+public class AbroadCodeDataSource {
 	private SQLiteDatabase database;
 	private FiCodeHelper dbHelper;
-	private String[] allColumns = {FiCodeHelper.ItalyCodesColumn._id, FiCodeHelper.ItalyCodesColumn.nationalCode, FiCodeHelper.ItalyCodesColumn.catastalCode, FiCodeHelper.ItalyCodesColumn.province, FiCodeHelper.ItalyCodesColumn.city};
-	private static final String cityAlphaSortAsc = FiCodeHelper.ItalyCodesColumn.city + " ASC";
+	private String[] allColumns = {FiCodeHelper.AbroadCodesColumn._id, FiCodeHelper.AbroadCodesColumn.nationalCode, FiCodeHelper.AbroadCodesColumn.city};
+	private static final String cityAlphaSortAsc = FiCodeHelper.AbroadCodesColumn.city + " ASC";
 	
 	/**
 	 * 
 	 * @param context
 	 */
 	
-	public ItalyCodeDataSource(Context context) {
+	public AbroadCodeDataSource(Context context) {
 		dbHelper = new FiCodeHelper(context);
 		
 		try {
@@ -89,21 +88,21 @@ public class ItalyCodeDataSource {
 	 * @return
 	 */
 	
-	public List<ItalyCode> getItalyCodes(String selectionFilter) {
-		List<ItalyCode> listItalyCodes = new ArrayList<ItalyCode>();
-		Cursor cursor = database.query(FiCodeHelper.Table.ItalyCodes, allColumns, selectionFilter, null, null, null, cityAlphaSortAsc);
+	public List<AbroadCode> getAbroadCodes(String selectionFilter) {
+		List<AbroadCode> listAbroadCodes = new ArrayList<AbroadCode>();
+		Cursor cursor = database.query(FiCodeHelper.Table.AbroadCodes, allColumns, selectionFilter, null, null, null, cityAlphaSortAsc);
 		
 		cursor.moveToFirst();
 		
 		while(!cursor.isAfterLast()) {
-			ItalyCode italyCode = cursorToItalyCode(cursor);
-			listItalyCodes.add(italyCode);
+			AbroadCode abroadCode = cursorToAbroadCode(cursor);
+			listAbroadCodes.add(abroadCode);
 			cursor.moveToNext();
 		}
 		
 		cursor.close();
 		
-		return listItalyCodes;
+		return listAbroadCodes;
 	}
 	
 	
@@ -113,13 +112,13 @@ public class ItalyCodeDataSource {
 	 * @return
 	 */
 	
-	private ItalyCode cursorToItalyCode(Cursor cursor) {
-		ItalyCode italyCode = new ItalyCode();
+	private AbroadCode cursorToAbroadCode(Cursor cursor) {
+		AbroadCode abroadCode = new AbroadCode();
 		
-		italyCode.setCity(cursor.getString(4));
-		italyCode.setProvince(cursor.getString(3));
-		italyCode.setNationalCode(cursor.getString(1));
+		abroadCode.setCity(cursor.getString(2));
+		abroadCode.setNationalCode(cursor.getString(1));
 		
-		return italyCode;		
+		return abroadCode;		
 	}
+
 }

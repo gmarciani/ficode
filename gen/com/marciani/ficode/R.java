@@ -8,10 +8,6 @@
 package com.marciani.ficode;
 
 public final class R {
-    public static final class array {
-        public static final int Flags=0x7f060001;
-        public static final int Languages=0x7f060000;
-    }
     public static final class attr {
     }
     public static final class dimen {
@@ -28,88 +24,87 @@ public final class R {
         public static final int ic_action_search=0x7f020000;
         public static final int ic_launcher=0x7f020001;
         public static final int ic_launcher_browse=0x7f020002;
-        public static final int ic_launcher_de=0x7f020003;
-        public static final int ic_launcher_en=0x7f020004;
-        public static final int ic_launcher_es=0x7f020005;
-        public static final int ic_launcher_fr=0x7f020006;
-        public static final int ic_launcher_it=0x7f020007;
-        public static final int ic_launcher_quit=0x7f020008;
-        public static final int ic_launcher_settings=0x7f020009;
-        public static final int ic_launcher_world=0x7f02000a;
+        public static final int ic_launcher_it=0x7f020003;
+        public static final int ic_launcher_quit=0x7f020004;
+        public static final int ic_launcher_settings=0x7f020005;
+        public static final int ic_launcher_world=0x7f020006;
     }
     public static final class id {
-        public static final int dpBirthday=0x7f090009;
-        public static final int etCity=0x7f09000b;
-        public static final int etCityBrowse=0x7f090000;
-        public static final int etFirstname=0x7f090004;
-        public static final int etLastname=0x7f090003;
-        public static final int ibtnBrowse=0x7f09000c;
-        public static final int icon=0x7f090012;
-        public static final int label=0x7f090013;
-        public static final int llhBirthday=0x7f090005;
-        public static final int llhCity=0x7f09000a;
-        public static final int llhFiCode=0x7f09000d;
-        public static final int llhPerson=0x7f090002;
-        public static final int llvMain=0x7f090001;
-        public static final int miLanguageSettings=0x7f090014;
-        public static final int miOmocodiaSettings=0x7f090015;
-        public static final int miQuit=0x7f090016;
-        public static final int omocodia_alert_dialog_layout_root=0x7f09000f;
-        public static final int rbFemale=0x7f090008;
-        public static final int rbMale=0x7f090007;
-        public static final int rgGender=0x7f090006;
-        public static final int sbOmocodia=0x7f090011;
-        public static final int tvAlertDialogOmocodia=0x7f090010;
-        public static final int tvFiCode=0x7f09000e;
+        public static final int dpBirthday=0x7f080009;
+        public static final int etCity=0x7f08000b;
+        public static final int etCityBrowse=0x7f080000;
+        public static final int etFirstname=0x7f080004;
+        public static final int etLastname=0x7f080003;
+        public static final int ibtnBrowse=0x7f08000c;
+        public static final int icon=0x7f080017;
+        public static final int label=0x7f080018;
+        public static final int llhBirthday=0x7f080005;
+        public static final int llhCity=0x7f08000a;
+        public static final int llhFiCode=0x7f08000d;
+        public static final int llhPerson=0x7f080002;
+        public static final int llvMain=0x7f080001;
+        public static final int miOmocodiaSettings=0x7f08001a;
+        public static final int miQuit=0x7f08001b;
+        public static final int miUserNationality=0x7f080019;
+        public static final int omocodia_alert_dialog_layout_root=0x7f08000f;
+        public static final int rbAbroad=0x7f080016;
+        public static final int rbFemale=0x7f080008;
+        public static final int rbItaly=0x7f080015;
+        public static final int rbMale=0x7f080007;
+        public static final int rgGender=0x7f080006;
+        public static final int rgUserNationality=0x7f080014;
+        public static final int sbOmocodia=0x7f080011;
+        public static final int tvAlertDialogOmocodia=0x7f080010;
+        public static final int tvAlertDialogUserNationality=0x7f080013;
+        public static final int tvFiCode=0x7f08000e;
+        public static final int user_nationality_alert_dialog_layout_root=0x7f080012;
     }
     public static final class layout {
         public static final int activity_city_list=0x7f030000;
         public static final int activity_fi_code=0x7f030001;
-        public static final int activity_language_settings=0x7f030002;
-        public static final int activity_prova=0x7f030003;
-        public static final int alert_dialog_omocodia=0x7f030004;
-        public static final int list_row_language_settings=0x7f030005;
+        public static final int alert_dialog_omocodia=0x7f030002;
+        public static final int alert_dialog_user_nationality=0x7f030003;
+        public static final int list_row_language_settings=0x7f030004;
     }
     public static final class menu {
-        public static final int menu_activity_fi_code=0x7f080000;
+        public static final int menu_activity_fi_code=0x7f070000;
     }
     public static final class string {
+        public static final int Abroad=0x7f05000a;
         /**  AlertDialog: Omocodia 
          */
         public static final int AlertDialogOmocodia=0x7f050005;
-        public static final int Browse=0x7f05000e;
+        /**  AlertDialog: User Nationality 
+         */
+        public static final int AlertDialogUserNationality=0x7f050008;
+        public static final int Browse=0x7f050012;
         public static final int Cancel=0x7f050007;
-        public static final int City=0x7f05000d;
+        public static final int City=0x7f050010;
         /**  Activity: CityList 
  <string name="City">City</string> 
          */
-        public static final int CityList=0x7f050010;
-        public static final int Female=0x7f05000c;
-        public static final int Firstname=0x7f050009;
+        public static final int CityList=0x7f050014;
+        public static final int Female=0x7f05000f;
+        public static final int Firstname=0x7f05000c;
         /**  Activity: FiCode 
  Activity: FiCode 
  Activity: FiCode 
  Activity: FiCode 
  Activity: FiCode 
          */
-        public static final int FiscalCode=0x7f050008;
+        public static final int FiscalCode=0x7f05000b;
         public static final int Icon=0x7f050004;
-        /**  Activity: LanguageSettings 
-         */
-        public static final int LanguageEnglish=0x7f050012;
-        public static final int LanguageFrench=0x7f050014;
-        public static final int LanguageGerman=0x7f050013;
-        public static final int LanguageItalian=0x7f050016;
-        public static final int LanguageSettings=0x7f050001;
-        public static final int LanguageSpanish=0x7f050015;
-        public static final int Lastname=0x7f05000a;
-        public static final int Male=0x7f05000b;
-        public static final int NoContent=0x7f050011;
+        public static final int Italy=0x7f050009;
+        public static final int Lastname=0x7f05000d;
+        public static final int Male=0x7f05000e;
+        public static final int Nationality=0x7f050011;
+        public static final int NoContent=0x7f050015;
         public static final int OK=0x7f050006;
-        public static final int Omocodia=0x7f05000f;
+        public static final int Omocodia=0x7f050013;
         public static final int OmocodiaSettings=0x7f050002;
         public static final int Quit=0x7f050003;
-        public static final int action_settings=0x7f050018;
+        public static final int UserNationality=0x7f050001;
+        public static final int action_settings=0x7f050016;
         /**  General 
  General 
  General 
@@ -117,8 +112,6 @@ public final class R {
  General 
          */
         public static final int app_name=0x7f050000;
-        public static final int hello_world=0x7f050019;
-        public static final int title_activity_prova=0x7f050017;
     }
     public static final class style {
         /** 
@@ -142,10 +135,10 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f070000;
+        public static final int AppBaseTheme=0x7f060000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f070001;
+        public static final int AppTheme=0x7f060001;
     }
 }

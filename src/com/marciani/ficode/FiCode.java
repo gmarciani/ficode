@@ -1,4 +1,4 @@
-/*  FiCode: Android App for Fiscal Code calculation.
+/*  FiCode: Android app for IT Fiscal Code calculation, with the support for the omocodia and the generation of abroad codes.
     Copyright (C) 2013  Giacomo Marciani <giacomo.marciani@gmail.com>.
 
     This program is free software: you can redistribute it and/or modify
@@ -19,7 +19,10 @@ package com.marciani.ficode;
 
 import java.util.Map;
 import com.marciani.ficode.R;
+
+import android.os.Build;
 import android.os.Bundle;
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -63,6 +66,7 @@ public class FiCode extends Activity {
 		protected static final String STR_CITY = "com.marciani.ficode.FiCode.CITY";
 		protected static final String STR_NATIONAL_CODE = "com.marciani.ficode.FiCode.DATA_NATIONAL_CODE";
 		protected static final String INT_OMOCODIA = "com.marciani.ficode.FiCode.OMOCODIA";
+		protected static final String STR_USER_NATIONALITY = "com.marciani.ficode.FiCode.USER_NATIONALITY";
 		protected static final String APP_PREF = "com.marciani.ficode.pref";
 	}
 	
@@ -79,11 +83,13 @@ public class FiCode extends Activity {
 	EditText etCity;
 	RadioGroup rgGender;
 	DatePicker dpBirthday;	
-	ImageButton ibtnBrowse;
-	SeekBar sbOmocodia;
+	ImageButton ibtnBrowse;	
 	TextView tvFiscalCode;
+	SeekBar sbOmocodia;
+	RadioGroup rgUserNationality;
 	
 	AlertDialog dialogOmocodia;
+	AlertDialog dialogUserNationality;
 	
 	String lastname;
 	String firstname;
@@ -94,6 +100,7 @@ public class FiCode extends Activity {
 	int year = 1990;
 	String city = "";
 	int omocodia = 0;
+	String userNationality = "Italy";
 	
 	String codeLastname = "***";
 	String codeFirstname = "***";
@@ -204,18 +211,19 @@ public class FiCode extends Activity {
 			public void onClick(View v) {
 				Intent intCityList = new Intent(getApplicationContext(), CityList.class);	
 				intCityList.putExtra(Data.STR_CITY, city);
+				intCityList.putExtra(Data.STR_USER_NATIONALITY, userNationality);
 				startActivity(intCityList);				
 			}
 		});		
 		
-		AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		builder.setTitle(R.string.Omocodia);
+		AlertDialog.Builder builderDialogOmocodia = new AlertDialog.Builder(this);
+		builderDialogOmocodia.setTitle(R.string.Omocodia);
 		
-		LayoutInflater inflater = (LayoutInflater) this.getSystemService(LAYOUT_INFLATER_SERVICE);
-		View dialogContent = inflater.inflate(R.layout.alert_dialog_omocodia, (ViewGroup) findViewById(R.id.omocodia_alert_dialog_layout_root));			
-		builder.setView(dialogContent);				
+		LayoutInflater inflaterDialogOmocodia = (LayoutInflater) this.getSystemService(LAYOUT_INFLATER_SERVICE);
+		View contentDialogOmocodia = inflaterDialogOmocodia.inflate(R.layout.alert_dialog_omocodia, (ViewGroup) findViewById(R.id.omocodia_alert_dialog_layout_root));			
+		builderDialogOmocodia.setView(contentDialogOmocodia);				
 		
-		sbOmocodia = (SeekBar) dialogContent.findViewById(R.id.sbOmocodia);					
+		sbOmocodia = (SeekBar) contentDialogOmocodia.findViewById(R.id.sbOmocodia);					
 		
 		sbOmocodia.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
 			
@@ -238,7 +246,7 @@ public class FiCode extends Activity {
 			}
 		});	
 		
-		builder.setPositiveButton(R.string.OK, new DialogInterface.OnClickListener() {
+		builderDialogOmocodia.setPositiveButton(R.string.OK, new DialogInterface.OnClickListener() {
 			
 			Toast toastOmocodia;
 	           public void onClick(DialogInterface dialog, int id) {
@@ -250,13 +258,43 @@ public class FiCode extends Activity {
 	           }
 	       });
 		
-		builder.setNegativeButton(R.string.Cancel, new DialogInterface.OnClickListener() {
+		builderDialogOmocodia.setNegativeButton(R.string.Cancel, new DialogInterface.OnClickListener() {
 	           public void onClick(DialogInterface dialog, int id) {
 	               sbOmocodia.setProgress(omocodia);
 	           }
 	       });	
 		
-		dialogOmocodia = builder.create();
+		dialogOmocodia = builderDialogOmocodia.create();
+		
+		AlertDialog.Builder builderDialogUserNationality = new AlertDialog.Builder(this);
+		builderDialogUserNationality.setTitle(R.string.UserNationality);
+		
+		LayoutInflater inflaterDialogUserNationality = (LayoutInflater) this.getSystemService(LAYOUT_INFLATER_SERVICE);
+		View contentDialogUserNationality = inflaterDialogUserNationality.inflate(R.layout.alert_dialog_user_nationality, (ViewGroup) findViewById(R.id.user_nationality_alert_dialog_layout_root));			
+		builderDialogUserNationality.setView(contentDialogUserNationality);
+		
+		rgUserNationality = (RadioGroup) contentDialogUserNationality.findViewById(R.id.rgUserNationality);		
+		
+		builderDialogUserNationality.setPositiveButton(R.string.OK, new DialogInterface.OnClickListener() {
+			
+			Toast toastUserNationality;
+	           public void onClick(DialogInterface dialog, int id) {
+	               userNationality = (rgUserNationality.getCheckedRadioButtonId() == R.id.rbItaly) ? "Italy" : "Abroad";
+	               toastUserNationality = Toast.makeText(getApplicationContext(), "Nationality: " + userNationality, Toast.LENGTH_SHORT);
+		           toastUserNationality.show();		           
+		           
+		           refreshMenu();
+		           etCity.setHint((userNationality.equals("Italy")) ? R.string.City : R.string.Nationality);
+	           }
+	       });
+		
+		builderDialogUserNationality.setNegativeButton(R.string.Cancel, new DialogInterface.OnClickListener() {
+	           public void onClick(DialogInterface dialog, int id) {
+	               rgUserNationality.check((userNationality.equals("Italy")) ? R.id.rbItaly : R.id.rbAbroad);
+	           }
+	       });	
+		
+		dialogUserNationality = builderDialogUserNationality.create();
 	}
 
 	@Override
@@ -272,6 +310,7 @@ public class FiCode extends Activity {
 		month = appPref.getInt(Data.INT_MONTH, month);
 		year = appPref.getInt(Data.INT_YEAR, year);	
 		omocodia = appPref.getInt(Data.INT_OMOCODIA, omocodia);
+		userNationality = appPref.getString(Data.STR_USER_NATIONALITY, userNationality);
 		
 		Intent intCityList = getIntent();		
 		if(intCityList.hasExtra(Data.STR_CITY) & intCityList.hasExtra(Data.STR_NATIONAL_CODE)) { 
@@ -312,6 +351,7 @@ public class FiCode extends Activity {
 			}
 		});
 		
+		etCity.setHint((userNationality.equals("Italy")) ? R.string.City : R.string.Nationality);
 		etCity.setText(city);
 		etCity.setSelection(etCity.getText().length());
 		
@@ -336,6 +376,7 @@ public class FiCode extends Activity {
 	    editorPref.putString(Data.STR_CITY, city);
 	    editorPref.putString(Data.STR_NATIONAL_CODE, codeCity);
 	    editorPref.putInt(Data.INT_OMOCODIA, omocodia);
+	    editorPref.putString(Data.STR_USER_NATIONALITY, userNationality);
 	    
 	    editorPref.commit();	    
 	}
@@ -345,19 +386,41 @@ public class FiCode extends Activity {
 		getMenuInflater().inflate(R.menu.menu_activity_fi_code, menu);
 		return true;
 	}
+	
+	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
+	private void refreshMenu() {
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+			invalidateOptionsMenu();
+		}
+	}	
+	
+	@Override
+	public boolean onPrepareOptionsMenu (Menu menu) {
+		
+	    menu.clear();
+	    
+	    getMenuInflater().inflate(R.menu.menu_activity_fi_code, menu);
+
+	    if(userNationality.equals("Italy")) {
+	    	menu.findItem(R.id.miUserNationality).setIcon(R.drawable.ic_launcher_it);	
+	    } else { 
+	    	menu.findItem(R.id.miUserNationality).setIcon(R.drawable.ic_launcher_world);        
+	    }
+
+	    return super.onPrepareOptionsMenu(menu);
+	}
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
-		case R.id.miLanguageSettings:
-			Intent intLanguageSettings = new Intent(getApplicationContext(), LanguageSettings.class);
-			startActivity(intLanguageSettings);	
+		case R.id.miUserNationality:
+			dialogUserNationality.show();
 			break;
 		case R.id.miOmocodiaSettings:	
 			dialogOmocodia.show();			
 			break;
 		case R.id.miQuit:
-			quitApplication();
+			finish();
 			break;
 		default:
 			break;			
@@ -365,13 +428,4 @@ public class FiCode extends Activity {
 		
 		return true;		
 	}	
-
-	
-	/**
-	 * Shuts the application process down.
-	 */
-	
-	public void quitApplication() {
-		android.os.Process.killProcess(android.os.Process.myPid());
-	}
 }
