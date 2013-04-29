@@ -316,6 +316,8 @@ public class FiCode extends Activity {
 		omocodia = appPref.getInt(Data.INT_OMOCODIA, omocodia);
 		userNationality = appPref.getString(Data.STR_USER_NATIONALITY, userNationality);
 		
+		refreshMenu();
+		
 		Intent intCityList = getIntent();		
 		if(intCityList.hasExtra(Data.STR_CITY) & intCityList.hasExtra(Data.STR_NATIONAL_CODE)) { 
 			city = intCityList.getStringExtra(Data.STR_CITY);

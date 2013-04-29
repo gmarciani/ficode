@@ -36,16 +36,14 @@ public final class R {
         public static final int etFirstname=0x7f080004;
         public static final int etLastname=0x7f080003;
         public static final int ibtnBrowse=0x7f08000c;
-        public static final int icon=0x7f080017;
-        public static final int label=0x7f080018;
         public static final int llhBirthday=0x7f080005;
         public static final int llhCity=0x7f08000a;
         public static final int llhFiCode=0x7f08000d;
         public static final int llhPerson=0x7f080002;
         public static final int llvMain=0x7f080001;
-        public static final int miOmocodiaSettings=0x7f08001a;
-        public static final int miQuit=0x7f08001b;
-        public static final int miUserNationality=0x7f080019;
+        public static final int miOmocodiaSettings=0x7f080018;
+        public static final int miQuit=0x7f080019;
+        public static final int miUserNationality=0x7f080017;
         public static final int omocodia_alert_dialog_layout_root=0x7f08000f;
         public static final int rbAbroad=0x7f080016;
         public static final int rbFemale=0x7f080008;
@@ -64,7 +62,6 @@ public final class R {
         public static final int activity_fi_code=0x7f030001;
         public static final int alert_dialog_omocodia=0x7f030002;
         public static final int alert_dialog_user_nationality=0x7f030003;
-        public static final int list_row_language_settings=0x7f030004;
     }
     public static final class menu {
         public static final int menu_activity_fi_code=0x7f070000;

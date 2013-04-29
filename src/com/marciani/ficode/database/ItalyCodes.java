@@ -21,7 +21,7 @@ package com.marciani.ficode.database;
 
 
 /**
- * This class provides the interface for the access to a generic database record of the specific database table AbroadCodes.
+ * This class provides the interface for the access to a generic database record of the specific database table ItalyCodes.
  * 
  * @author Giacomo Marciani <giacomo.marciani@gmail.com>
  * 
@@ -29,10 +29,12 @@ package com.marciani.ficode.database;
  * 
  */
 
-public class AbroadCode {
+public class ItalyCodes {
 	
 	private long _id;
 	private String nationalCode;
+	private String catastalCode;
+	private String province;
 	private String city;
 
 	
@@ -81,6 +83,46 @@ public class AbroadCode {
 	 * @return
 	 */
 	
+	public String getCatastalCode() {
+		return catastalCode;
+	}
+
+	
+	/**
+	 * 
+	 * @param catastalCode
+	 */
+	
+	public void setCatastalCode(String catastalCode) {
+		this.catastalCode = catastalCode;
+	}
+
+	
+	/**
+	 * 
+	 * @return
+	 */
+	
+	public String getProvince() {
+		return province;
+	}
+
+	
+	/**
+	 * 
+	 * @param province
+	 */
+	
+	public void setProvince(String province) {
+		this.province = province;
+	}
+
+	
+	/**
+	 * 
+	 * @return
+	 */
+	
 	public String getCity() {
 		return city;
 	}
@@ -97,6 +139,6 @@ public class AbroadCode {
 	
 	@Override
 	public String toString() {
-		return (city);
+		return (city + " (" + province + ")");
 	}
 }

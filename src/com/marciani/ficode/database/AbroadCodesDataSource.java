@@ -40,7 +40,7 @@ import android.database.sqlite.SQLiteDatabase;
  * 
  */
 
-public class AbroadCodeDataSource {
+public class AbroadCodesDataSource {
 	private SQLiteDatabase database;
 	private FiCodeHelper dbHelper;
 	private String[] allColumns = {FiCodeHelper.AbroadCodesColumn._id, FiCodeHelper.AbroadCodesColumn.nationalCode, FiCodeHelper.AbroadCodesColumn.city};
@@ -51,7 +51,7 @@ public class AbroadCodeDataSource {
 	 * @param context
 	 */
 	
-	public AbroadCodeDataSource(Context context) {
+	public AbroadCodesDataSource(Context context) {
 		dbHelper = new FiCodeHelper(context);
 		
 		try {
@@ -93,14 +93,14 @@ public class AbroadCodeDataSource {
 	 * @return
 	 */
 	
-	public List<AbroadCode> getAbroadCodes(String selectionFilter) {
-		List<AbroadCode> listAbroadCodes = new ArrayList<AbroadCode>();
+	public List<AbroadCodes> getAbroadCodes(String selectionFilter) {
+		List<AbroadCodes> listAbroadCodes = new ArrayList<AbroadCodes>();
 		Cursor cursor = database.query(FiCodeHelper.Table.AbroadCodes, allColumns, selectionFilter, null, null, null, cityAlphaSortAsc);
 		
 		cursor.moveToFirst();
 		
 		while(!cursor.isAfterLast()) {
-			AbroadCode abroadCode = cursorToAbroadCode(cursor);
+			AbroadCodes abroadCode = cursorToAbroadCode(cursor);
 			listAbroadCodes.add(abroadCode);
 			cursor.moveToNext();
 		}
@@ -117,8 +117,8 @@ public class AbroadCodeDataSource {
 	 * @return
 	 */
 	
-	private AbroadCode cursorToAbroadCode(Cursor cursor) {
-		AbroadCode abroadCode = new AbroadCode();
+	private AbroadCodes cursorToAbroadCode(Cursor cursor) {
+		AbroadCodes abroadCode = new AbroadCodes();
 		
 		abroadCode.setCity(cursor.getString(2));
 		abroadCode.setNationalCode(cursor.getString(1));

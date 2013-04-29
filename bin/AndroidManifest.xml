@@ -39,6 +39,16 @@
             
         </activity>  
         
+        <provider
+            android:name="com.marciani.ficode.provider.FiCodeProvider"
+            android:authorities="com.marciani.ficode.provider">
+            android:readPermission="com.marciani.ficode.READ_PROVIDER"
+            android:icon="@drawable/ic_launcher"
+            android:enabled="true"
+            android:exported="true"
+            
+        </provider>
+        
     </application>
     
 </manifest>

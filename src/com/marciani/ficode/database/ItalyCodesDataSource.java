@@ -38,7 +38,7 @@ import android.database.sqlite.SQLiteDatabase;
  * 
  */
 
-public class ItalyCodeDataSource {
+public class ItalyCodesDataSource {
 	
 	private SQLiteDatabase database;
 	private FiCodeHelper dbHelper;
@@ -50,7 +50,7 @@ public class ItalyCodeDataSource {
 	 * @param context
 	 */
 	
-	public ItalyCodeDataSource(Context context) {
+	public ItalyCodesDataSource(Context context) {
 		dbHelper = new FiCodeHelper(context);
 		
 		try {
@@ -92,14 +92,14 @@ public class ItalyCodeDataSource {
 	 * @return
 	 */
 	
-	public List<ItalyCode> getItalyCodes(String selectionFilter) {
-		List<ItalyCode> listItalyCodes = new ArrayList<ItalyCode>();
+	public List<ItalyCodes> getItalyCodes(String selectionFilter) {
+		List<ItalyCodes> listItalyCodes = new ArrayList<ItalyCodes>();
 		Cursor cursor = database.query(FiCodeHelper.Table.ItalyCodes, allColumns, selectionFilter, null, null, null, cityAlphaSortAsc);
 		
 		cursor.moveToFirst();
 		
 		while(!cursor.isAfterLast()) {
-			ItalyCode italyCode = cursorToItalyCode(cursor);
+			ItalyCodes italyCode = cursorToItalyCode(cursor);
 			listItalyCodes.add(italyCode);
 			cursor.moveToNext();
 		}
@@ -116,8 +116,8 @@ public class ItalyCodeDataSource {
 	 * @return
 	 */
 	
-	private ItalyCode cursorToItalyCode(Cursor cursor) {
-		ItalyCode italyCode = new ItalyCode();
+	private ItalyCodes cursorToItalyCode(Cursor cursor) {
+		ItalyCodes italyCode = new ItalyCodes();
 		
 		italyCode.setCity(cursor.getString(4));
 		italyCode.setProvince(cursor.getString(3));

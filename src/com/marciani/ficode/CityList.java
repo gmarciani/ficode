@@ -22,11 +22,11 @@ package com.marciani.ficode;
 
 import java.util.List;
 
-import com.marciani.ficode.database.AbroadCode;
-import com.marciani.ficode.database.AbroadCodeDataSource;
+import com.marciani.ficode.database.AbroadCodes;
+import com.marciani.ficode.database.AbroadCodesDataSource;
 import com.marciani.ficode.database.FiCodeHelper;
-import com.marciani.ficode.database.ItalyCode;
-import com.marciani.ficode.database.ItalyCodeDataSource;
+import com.marciani.ficode.database.ItalyCodes;
+import com.marciani.ficode.database.ItalyCodesDataSource;
 
 import android.os.Bundle;
 import android.app.ListActivity;
@@ -53,8 +53,8 @@ import android.os.Build;
 
 public class CityList extends ListActivity {		
 
-	private ItalyCodeDataSource datasourceItalyCodes;
-	private AbroadCodeDataSource datasourceAbroadCodes;
+	private ItalyCodesDataSource datasourceItalyCodes;
+	private AbroadCodesDataSource datasourceAbroadCodes;
 	private static final String selectionFilterItalyCodes = FiCodeHelper.ItalyCodesColumn.city + " like ";
 	private static final String selectionFilterAbroadCodes = FiCodeHelper.AbroadCodesColumn.city + " like ";
 	private static final String noFilter = null;
@@ -90,14 +90,14 @@ public class CityList extends ListActivity {
 				if(userNationality.equals("Italy")) {
 					filter = (city.length() == 0) ? noFilter : (selectionFilterItalyCodes + "'" + city + "%'");
 					
-					List<ItalyCode> listItalyCode = datasourceItalyCodes.getItalyCodes(filter);
-					ArrayAdapter<ItalyCode> adapterItalyCode = new ArrayAdapter<ItalyCode>(getApplicationContext(), android.R.layout.simple_list_item_1, listItalyCode);
+					List<ItalyCodes> listItalyCode = datasourceItalyCodes.getItalyCodes(filter);
+					ArrayAdapter<ItalyCodes> adapterItalyCode = new ArrayAdapter<ItalyCodes>(getApplicationContext(), android.R.layout.simple_list_item_1, listItalyCode);
 					setListAdapter(adapterItalyCode);						
 				} else {
 					filter = (city.length() == 0) ? noFilter : (selectionFilterAbroadCodes + "'" + city + "%'");
 					
-					List<AbroadCode> listAbroadCode = datasourceAbroadCodes.getAbroadCodes(filter);
-					ArrayAdapter<AbroadCode> adapterAbroadCode = new ArrayAdapter<AbroadCode>(getApplicationContext(), android.R.layout.simple_list_item_1, listAbroadCode);
+					List<AbroadCodes> listAbroadCode = datasourceAbroadCodes.getAbroadCodes(filter);
+					ArrayAdapter<AbroadCodes> adapterAbroadCode = new ArrayAdapter<AbroadCodes>(getApplicationContext(), android.R.layout.simple_list_item_1, listAbroadCode);
 					setListAdapter(adapterAbroadCode);						
 				}							
 			}
@@ -119,18 +119,18 @@ public class CityList extends ListActivity {
 		super.onResume();				
 		
 		if(userNationality.equals("Italy")) {
-			datasourceItalyCodes = new ItalyCodeDataSource(this);
+			datasourceItalyCodes = new ItalyCodesDataSource(this);
 			datasourceItalyCodes.open();		
 			
-			List<ItalyCode> listItalyCode = datasourceItalyCodes.getItalyCodes(selectionFilterItalyCodes + "'" + city + "%'");
-			ArrayAdapter<ItalyCode> adapterItalyCode = new ArrayAdapter<ItalyCode>(this, android.R.layout.simple_list_item_1, listItalyCode);
+			List<ItalyCodes> listItalyCode = datasourceItalyCodes.getItalyCodes(selectionFilterItalyCodes + "'" + city + "%'");
+			ArrayAdapter<ItalyCodes> adapterItalyCode = new ArrayAdapter<ItalyCodes>(this, android.R.layout.simple_list_item_1, listItalyCode);
 			setListAdapter(adapterItalyCode);			
 		} else {
-			datasourceAbroadCodes = new AbroadCodeDataSource(this);
+			datasourceAbroadCodes = new AbroadCodesDataSource(this);
 			datasourceAbroadCodes.open();		
 			
-			List<AbroadCode> listAbroadCode = datasourceAbroadCodes.getAbroadCodes(selectionFilterAbroadCodes + "'" + city + "%'");
-			ArrayAdapter<AbroadCode> adapterAbroadCode = new ArrayAdapter<AbroadCode>(this, android.R.layout.simple_list_item_1, listAbroadCode);
+			List<AbroadCodes> listAbroadCode = datasourceAbroadCodes.getAbroadCodes(selectionFilterAbroadCodes + "'" + city + "%'");
+			ArrayAdapter<AbroadCodes> adapterAbroadCode = new ArrayAdapter<AbroadCodes>(this, android.R.layout.simple_list_item_1, listAbroadCode);
 			setListAdapter(adapterAbroadCode);					
 		}		
 	}
@@ -153,7 +153,7 @@ public class CityList extends ListActivity {
 		Toast toastCity;
 		
 		if(userNationality.equals("Italy")) {
-			ItalyCode item = (ItalyCode) l.getAdapter().getItem(position);
+			ItalyCodes item = (ItalyCodes) l.getAdapter().getItem(position);
 			
 			city = item.getCity();
 			province = item.getProvince();
@@ -166,7 +166,7 @@ public class CityList extends ListActivity {
 			toastCity.show();
 		
 		} else {
-			AbroadCode item = (AbroadCode) l.getAdapter().getItem(position);
+			AbroadCodes item = (AbroadCodes) l.getAdapter().getItem(position);
 			
 			city = item.getCity();
 			nationalCode = item.getNationalCode();
